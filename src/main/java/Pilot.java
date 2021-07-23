@@ -17,4 +17,8 @@ public class Pilot extends Person{
         return this.pilotID;
     }
 
+    public String flyPlane(){
+        return String.format("I am %s, and I am flying!", getName());
+    }
+
 }

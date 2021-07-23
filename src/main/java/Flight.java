@@ -58,6 +58,6 @@ public class Flight {
 
     public void bookPassenger(Passenger passenger) {
         passengers.add(passenger);
-        
+
     }
 }
