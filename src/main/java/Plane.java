@@ -1,7 +1,6 @@
 public class Plane {
 
     private PlaneType planeType;
-    private int totalWeight;
 
     public Plane(PlaneType planeType){
         this.planeType = planeType;
@@ -19,8 +18,4 @@ public class Plane {
         return this.planeType.getTotalWeight();
     }
 
-    public void addBags(int bags) {
-//        if(planeType.getCapacity() < ())
-        this.totalWeight += bags;
-    }
 }

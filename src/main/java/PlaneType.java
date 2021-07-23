@@ -1,6 +1,6 @@
 public enum PlaneType {
-    BOEING747(100, 10000),
-    PUDDLEJUMPER(10, 2000);
+    BOEING747(400, 10000), // Capacity = seats,
+    PUDDLEJUMPER(10, 200);
 
     private final int capacity;
     private final int totalWeight;
