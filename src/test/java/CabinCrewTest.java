@@ -21,4 +21,9 @@ public class CabinCrewTest {
     public void hasRank(){
         assertEquals(Rank.ATTENDANT, cabinCrew.getRank());
     }
+
+    @Test
+    public void canRelayMessage(){
+        assertEquals("I have a message for you.", cabinCrew.relayMessage());
+    }
 }

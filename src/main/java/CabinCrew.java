@@ -10,4 +10,8 @@ public class CabinCrew extends Person{
     public Rank getRank(){
         return rank;
     }
+
+    public String relayMessage(){
+        return "I have a message for you.";
+    }
 }
