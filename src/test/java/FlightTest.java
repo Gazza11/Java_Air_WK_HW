@@ -19,6 +19,9 @@ public class FlightTest {
 
     ArrayList<CabinCrew> cabinTeam;
 
+    Passenger passenger1;
+    Passenger passenger2;
+
     @Before
     public void before(){
         plane = new Plane(PlaneType.PUDDLEJUMPER);
@@ -29,6 +32,8 @@ public class FlightTest {
         cabinTeam.add(crew1);
         cabinTeam.add(crew2);
         flight = new Flight(FlightInfo.FR756, plane, pilot1, cabinTeam);
+        passenger1 = new Passenger("Niellan", 2);
+        passenger2 = new Passenger("Keira", 8);
     }
 
     @Test
@@ -74,5 +79,13 @@ public class FlightTest {
     @Test
     public void returnsAvailableSeats(){
         assertEquals(10, flight.getAvailableSeats());
+    }
+
+    @Test
+    public void canBookPassengerOnFlight(){
+        flight.bookPassenger(passenger1);
+        assertEquals(1, flight.getPassengerCount());
+        assertEquals(9, flight.getAvailableSeats());
+
     }
 }
