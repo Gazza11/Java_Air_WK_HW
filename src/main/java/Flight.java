@@ -14,7 +14,45 @@ public class Flight {
         this.pilot = pilot;
         this.cabinTeam = cabinTeam;
         this.passengers = new ArrayList<>();
+    }
 
+    public FlightInfo getFlightInfo() {
+        return flightInfo;
+    }
 
+    public Plane getPlane() {
+        return plane;
+    }
+
+    public Pilot getPilot() {
+        return pilot;
+    }
+
+    public ArrayList<CabinCrew> getCabinTeam() {
+        return cabinTeam;
+    }
+
+    public ArrayList<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public int getPassengerCount(){
+        return passengers.size();
+    }
+
+    public String getDestinationInfo(){
+        return flightInfo.getDestination();
+    }
+
+    public String getDepartureInfo(){
+        return flightInfo.getDeparture();
+    }
+
+    public String getDepartureDateInfo(){
+        return flightInfo.getDepartureDate();
+    }
+
+    public int getAvailableSeats(){
+        return (plane.getCapacityFromType() - passengers.size());
     }
 }

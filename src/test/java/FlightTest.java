@@ -32,13 +32,18 @@ public class FlightTest {
     }
 
     @Test
+    public void hasFlightInfo(){
+        assertEquals(FlightInfo.FR756, flight.getFlightInfo());
+    }
+
+    @Test
     public void hasPlane(){
-        assertEquals(PlaneType.PUDDLEJUMPER, flight.getPlane());
+        assertEquals(PlaneType.PUDDLEJUMPER, flight.getPlane().getPlaneType());
     }
 
     @Test
     public void hasPilot(){
-        assertEquals("Chris," flight.getPilot());
+        assertEquals("Chris", flight.getPilot().getName());
     }
 
     @Test
@@ -48,16 +53,26 @@ public class FlightTest {
 
     @Test
     public void hasDestination(){
-        assertEquals("LAX", flight.getDestination());
+        assertEquals("LAX", flight.getDestinationInfo());
     }
 
     @Test
     public void hasDeparture(){
-        assertEquals("EDI", flight.getDeparture());
+        assertEquals("EDI", flight.getDepartureInfo());
     }
 
     @Test
     public void hasDepartureDate(){
-        assertEquals("05/08/2022", flight.getDepartureDate());
+        assertEquals("05/08/2022", flight.getDepartureDateInfo());
+    }
+
+    @Test
+    public void hasPassengers(){
+        assertEquals(0, flight.getPassengerCount());
+    }
+
+    @Test
+    public void returnsAvailableSeats(){
+        assertEquals(10, flight.getAvailableSeats());
     }
 }
