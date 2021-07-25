@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class FlightTest {
 
@@ -100,4 +101,13 @@ public class FlightTest {
         flight.bookPassenger(passenger2);
         assertEquals(10, flight.totalCurrentBaggage());
     }
+
+    @Test
+    public void canBookPassengerFullProcess(){
+        flight.bookPassenger(passenger1);
+        assertEquals(true, passenger1.onFlightStatus());
+        assertNotEquals("", passenger1.getSeatNumber());
+        System.out.println(passenger1.getSeatNumber());
+    }
+
 }

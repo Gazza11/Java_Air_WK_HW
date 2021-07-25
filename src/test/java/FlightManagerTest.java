@@ -71,4 +71,28 @@ public class FlightManagerTest {
         assertEquals(90, flightManager.baggageWeightRemaining());
     }
 
+    @Test
+    public void stressTestBookings(){
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
+        assertEquals(26, flightManager.baggageWeightRemaining());
+        assertEquals(10, flightManager.getPassengersOnFlight().size());
+        System.out.println(passenger2.getSeatNumber());
+        assertEquals(0, flightManager.getFlight().getAvailableSeats());
+    }
+
 }
