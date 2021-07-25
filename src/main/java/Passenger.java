@@ -16,4 +16,8 @@ public class Passenger extends Person{
     public boolean onFlightStatus(){
         return this.onFlight;
     }
+
+    public void changeOnFlightStatus(){
+            onFlight = !onFlight;
+    }
 }

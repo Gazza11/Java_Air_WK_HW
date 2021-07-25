@@ -26,4 +26,17 @@ public class PassengerTest {
     public void hasOnFlightStatus(){
         assertEquals(false, passenger.onFlightStatus());
     }
+
+    @Test
+    public void canChangeOnFlightStatus(){
+        passenger.changeOnFlightStatus();
+        assertEquals(true, passenger.onFlightStatus());
+    }
+
+    @Test
+    public void canChangeOnFlightStatusBack(){
+        passenger.changeOnFlightStatus();
+        passenger.changeOnFlightStatus();
+        assertEquals(false, passenger.onFlightStatus());
+    }
 }
