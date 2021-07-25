@@ -76,8 +76,11 @@ public class Flight {
     }
 
     public void assignSeatNumber(Passenger passenger){
-        int intRandom = new Random().nextInt(plane.getSeatNumbers().size());
-        String seat = plane.getSeatNumbers().remove(intRandom).toString();
-        passenger.setSeatNumber(seat);
+        int intRandom = 0 + (int)(Math.random() * ((getAvailableSeats() - 0) + 1));
+        if(intRandom >= 0){
+            String seat = plane.getSeatNumbers().remove(intRandom).toString();
+            passenger.setSeatNumber(seat);
+        }
+
     }
 }

@@ -37,8 +37,6 @@ public class FlightManagerTest {
         passenger1 = new Passenger("Niellan", 2);
         passenger2 = new Passenger("Keira", 8);
         flightManager = new FlightManager(flight);
-        flight.bookPassenger(passenger1);
-        flight.bookPassenger(passenger2);
     }
 
     @Test
@@ -63,16 +61,25 @@ public class FlightManagerTest {
 
     @Test
     public void hasTotalBaggageCurrentlyReserved(){
+        flight.bookPassenger(passenger2);
+        flight.bookPassenger(passenger1);
         assertEquals(10, flightManager.totalCurrentBaggage());
     }
 
     @Test
     public void hasRemainingBaggageCapacity(){
+        flight.bookPassenger(passenger2);
+        flight.bookPassenger(passenger1);
         assertEquals(90, flightManager.baggageWeightRemaining());
     }
 
     @Test
     public void stressTestBookings(){
+        flight.bookPassenger(passenger1);
+        System.out.println(passenger1.getSeatNumber());
+        System.out.println(flightManager.getFlight().getAvailableSeats());
+        flight.bookPassenger(passenger2);
+        System.out.println(passenger2.getSeatNumber());
         flight.bookPassenger(passenger2);
         System.out.println(passenger2.getSeatNumber());
         flight.bookPassenger(passenger2);
@@ -91,7 +98,6 @@ public class FlightManagerTest {
         System.out.println(passenger2.getSeatNumber());
         assertEquals(26, flightManager.baggageWeightRemaining());
         assertEquals(10, flightManager.getPassengersOnFlight().size());
-        System.out.println(passenger2.getSeatNumber());
         assertEquals(0, flightManager.getFlight().getAvailableSeats());
     }
 
