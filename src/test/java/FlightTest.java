@@ -86,6 +86,18 @@ public class FlightTest {
         flight.bookPassenger(passenger1);
         assertEquals(1, flight.getPassengerCount());
         assertEquals(9, flight.getAvailableSeats());
+    }
 
+    @Test
+    public void canGetTotalCurrentBaggage(){
+        flight.bookPassenger(passenger1);
+        assertEquals(2, flight.totalCurrentBaggage());
+    }
+
+    @Test
+    public void canGetTotalCurrentBaggageTwoPassengers(){
+        flight.bookPassenger(passenger1);
+        flight.bookPassenger(passenger2);
+        assertEquals(10, flight.totalCurrentBaggage());
     }
 }

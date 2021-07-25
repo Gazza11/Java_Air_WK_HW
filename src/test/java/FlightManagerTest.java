@@ -37,11 +37,38 @@ public class FlightManagerTest {
         passenger1 = new Passenger("Niellan", 2);
         passenger2 = new Passenger("Keira", 8);
         flightManager = new FlightManager(flight);
+        flight.bookPassenger(passenger1);
+        flight.bookPassenger(passenger2);
     }
 
     @Test
     public void hasFlight(){
         assertEquals(flight, flightManager.getFlight());
+    }
+
+    @Test
+    public void hasCapacityFromPlane(){
+        assertEquals(10, flightManager.getCapacityOfFlight());
+    }
+
+    @Test
+    public void hasTotalWeightForBags(){
+        assertEquals(100, flightManager.getTotalWeightForBags());
+    }
+
+    @Test
+    public void hasBaggageReservePerPerson(){
+        assertEquals(10, flightManager.BaggageReservePerPassenger());
+    }
+
+    @Test
+    public void hasTotalBaggageCurrentlyReserved(){
+        assertEquals(10, flightManager.totalCurrentBaggage());
+    }
+
+    @Test
+    public void hasRemainingBaggageCapacity(){
+        assertEquals(90, flightManager.baggageWeightRemaining());
     }
 
 }

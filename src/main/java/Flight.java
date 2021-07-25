@@ -58,6 +58,13 @@ public class Flight {
 
     public void bookPassenger(Passenger passenger) {
         passengers.add(passenger);
+    }
 
+    public int totalCurrentBaggage(){
+        int total = 0;
+        for(int i = 0; i < passengers.size(); i++){
+            total += passengers.get(i).getBags();
+        }
+        return total;
     }
 }
