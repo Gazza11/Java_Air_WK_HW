@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Flight {
 
@@ -58,6 +59,8 @@ public class Flight {
 
     public void bookPassenger(Passenger passenger) {
         passengers.add(passenger);
+        assignSeatNumber(passenger);
+        passenger.changeOnFlightStatus();
     }
 
     public int totalCurrentBaggage(){
@@ -66,5 +69,13 @@ public class Flight {
             total += passengers.get(i).getBags();
         }
         return total;
+    }
+
+    public void assignSeatNumber(Passenger passenger){
+        int intRandom = ThreadLocalRandom.current().nextInt();
+        String seat = "B";
+        seat += Integer.toString(intRandom);
+        passenger.setSeatNumber(seat);
+
     }
 }

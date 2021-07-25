@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Plane {
 
     private PlaneType planeType;
@@ -18,4 +22,7 @@ public class Plane {
         return this.planeType.getTotalWeight();
     }
 
+    public ArrayList getSeatNumbers() {
+        return planeType.getSeatNumbers();
+    }
 }

@@ -39,4 +39,9 @@ public class PassengerTest {
         passenger.changeOnFlightStatus();
         assertEquals(false, passenger.onFlightStatus());
     }
+
+    @Test
+    public void hasSeatNumberEmpty(){
+        assertEquals("", passenger.getSeatNumber());
+    }
 }

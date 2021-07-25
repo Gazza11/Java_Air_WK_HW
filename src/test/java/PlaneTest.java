@@ -28,4 +28,9 @@ public class PlaneTest {
         assertEquals(10000, plane.getTotalWeight());
     }
 
+    @Test
+    public void hasSeatNumbers(){
+        assertEquals("A1", plane.getSeatNumbers().get(0));
+    }
+
 }
